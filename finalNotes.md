@@ -1,14 +1,20 @@
 # Final Exam Study Notes
 
-## 1. How to clone a GitHub repository
-
-* In the terminal, we can run : `git clone url-of-repository-here`
+## 1. How to clone a GitHub repository?
+* Cloning a GitHub repository means making a copy of a project from GitHub onto our computer. This lets us view, edit, and run the project locally.
+* Git must be installed on our system before cloning.
+* **Steps:**
+  * Open the GitHub repository
+  * Copy the repository link (URL)
+  * Open terminal: Go to the folder where you want to save the project
+  * Run the clone command: 
+    * `git clone + url-of-repository-here`
 
 <hr>
 
-## 2. How to use the git commands
+## 2. How to use the git commands?
 
-* There are many git commands. The following are most common git commands:
+* The following are most common git commands:
 
     | Command                          | Purpose                                                                                   |
     | -------------------------------- | ----------------------------------------------------------------------------------------- |
@@ -20,33 +26,32 @@
 
 <hr>
 
-## 3. How to write a Markdown file that contains images and proper formatting
+## 3. How to write a Markdown file that contains images and proper formatting?
+Proper formatting can be provided in a markdown file by providing proper spaces, setting proper headings, and providing data in tables wherever required.
 
-Adding images in a markdown files can be achieved by using this syntax
-* **Formula:**`![image discription](path/to/image or image url)`
+### Headings:
+* Start the line with a `#` symbol then space.
+  * **For example:**
+    * `# What is Ubuntu?`
+    * `## Ubuntu Release Cycle`
+    * `### Currently supported releases`
 
-By default, md files does not support formatting images. But some html code can be used to adjust the width and height of images.
-
-Other than this, proper formatting can be provided in a markdown file by providing proper spaces, setting proper headings, and providing data in tables wherever required.
-
-* **Headings:** Start the line with a `#` symbol then space.
-* **For example:**
-  * `# What is Ubuntu?`
-  * `## Ubuntu Release Cycle`
-  * `### Currently supported releases`
 ![](headings.png)
 
-* **Paragraph:**
+### Paragraph:
   * **Bold Text:** Start and end a word or line with **2*** `**` with **no space** between the * and first or last word.
   * **Italics:** Start and end a word or line with **1*** `*` with **no space** between the * and first or last word.
   * **Strike through:** Start and end a word or line with **2~** `~~` with **no space** between the ~ and first or last word.
-* **Links:**
+### Links:
   * **Formula:** `[Text here](URL here)`
-* **Tables:**
-  * 1. An empty space before and after table.
-  * 2. Every row starts and ends with a pipe.
-  * 3. The first row is the table headers.
-  * 4. USe --- for the second row to divide the headers from the table content
+### Images:
+  * **Formula:** `![image description](path/to/image or image url)`
+  * By default, md files does not support formatting images. But some html code can be used to adjust the width and height of images.
+### Tables:
+1. An empty space before and after table.
+2. Every row starts and ends with a pipe.
+3. The first row is the table headers.
+4. Use --- for the second row to divide the headers from the table content
 * **For example:**
     1.`|Name|Genre|Year Released|`
     2.`|----|-----|-------------|`
@@ -55,40 +60,67 @@ Other than this, proper formatting can be provided in a markdown file by providi
 
 ![](table.png)
 
-* **Code formatting:**
+### Code Formatting:
+#### Code block:
+  * To write a code block, surround the text with **3 backtick characters (`)** or start the text with a tab.
+  * **For example:**
+    \```
+    #!/bin/bash
+    echo 'Hello world'
+    \```
+#### Inline Code Formatting: 
+  * To write a inline code , we use a **single backtick (`)**(no space after the first backtick and no space before the ending backtick).
+  * **For example:**
+  \`echo 'Hello world'\`
 
 <hr>
 
-## 4. How to convert a Markdown file to PDF
+## 4. How to convert a Markdown file to PDF?
 
-To be able to convert a Markdown file to PDF, we must first have installed the relevant VS Code plugin. For example if we have installed "Markdown PDF", we can convert md file into PDF by doing the following:
+To be able to convert a Markdown file to PDF, first we must have installed the relevant VS Code plugin. 
+For example, if we have installed "Markdown PDF", we can convert md file into PDF by doing the following:
 
-    a. Right click inside the md file
+  1. Right click inside the md file
   
-    b. Select Markdown PDF: Export (PDF)
+  2. Select Markdown PDF: Export (PDF)
 
 This will generate a pdf file in the same folder as the md file.
 
 <hr>
 
-## 5. How to compress (zip) a directory/folder in Debian
+## 5. How to compress (zip) a directory/folder in Debian?
+1. Make sure `zip` is available.
+   * Check if zip is installed.
+     * `zip -v`
+   * If not, install it.
+     * `sudo apt update`
+     * `sudo apt install zip`
+2. Zip or compress the directory.
+   * Use `-r` option to include all files and subfolders (-r = recursive)
+    * `zip -r archive_name.zip folder_name`
+    * **For example:**
+      * `zip -r project.zip my_project`
+This creates a ZIP file called project.zip containing everything inside the my_project folder.
 
 <hr>
 
-## 6. What are Absolute paths and relative paths? (provide examples with commands. For example, creating a file using an absolute path.)
+## 6. What are Absolute paths and relative paths? 
 
-Absolute path is the locaiton of a file starting at the root of a filesystem, while relative path is the location of a file startin from a child directory of the current working directory.
-For example, creating a file using an absolute path:
+**Absolute paths** are the location of a file starting at the root of a filesystem.
+While, **relative paths** are the location of a file starting from a child directory of the current working directory.
 
-```
-# Absolute path 
-touch ~/test.md
+**For example :** 
+* Creating a file using an absolute & relative path:
 
-# Relative path
-touch ./test.md
-```
+* **Absolute path :**
+`touch ~/test.md`   (~/ = home directory)
 
-Both of the commands above will create the `test.md`. The first one (Absolute path) will create it in the home directory regardless of the current directory. But the second command (relative path) will create the file in the current working directory.
+* **Relative path :**
+`touch ./test.md`   (./ = current directory)
+
+Both of the commands above will create the `test.md`. 
+**The first one (Absolute path)** will create it in the home directory regardless of the current directory. 
+**But the second command (relative path)** will create the file in the current working directory.
 
 <hr>
 
@@ -98,7 +130,7 @@ We can use man page to shows or display the manual page for a given command
 
 * **Usage**:
   `man` + `options` + `command`
-* **Examples**:
+* **For example**:
   * To open the man page of echo command
     * `man echo`
   * To open a specific man page
@@ -108,42 +140,40 @@ We can use man page to shows or display the manual page for a given command
 
 ---
 
-## 8. How to parse (search) for specific words in the manual page
+## 8. How to parse (search) for specific words in the manual page?
 
 We can pipe the output of the man page and provide a keyword so that only lines containing the keyword will be displayed as an output.
 
-For example:
+**For example:**
+* **Use grep** to look for a string in a particular man page
+  * `man ls | grep "human-readable"`
 
 * Display only the options of any **command from its man page**
   * `man ls | grep "^[[:space:]]*[[:punct:]]"`
 
 ---
 
-## 9. How to redirect output (>, >>, and |)
+## 9. How to redirect output (>, >>, and |)?
 
-There are multiple ways to redirect outputs available to be used.
+There are multiple ways to redirect outputs:
 
-* Using `>` will redirect an output and either create or replace a file that already exists and overwrite whatever is already inside the file.
+* **Using `>`** will redirect an output and either **create or replace a file** that already exists and overwrite whatever is already inside the file.
+  * **For example:**
 
-```
-ls -la > allmyfiles.lst
-```
+    `ls -la > allmyfiles.lst`
 
-* Using  `>>` will redirect an output place it at the end of a file. For exampel:
+* **Using  `>>`** will redirect or **add an output**, place it at the end of a file. 
+  * **For example:**
 
-```
-  ls -la >> allmyfiles.lst
-```
+    `ls -la >> allmyfiles.lst`
 
-* Using `|` will redirect the out put of a command so that it can be used as an input for another command. For example:
-
-```
-man ls | grep "^[[:space:]]*[[:punct:]]"
-```
+* **Using `|`** will redirect the output of a command so that it can be used as **an input for another command.** 
+  * **For example:**
+    `man ls | grep "^[[:space:]]*[[:punct:]]"`
 
 ---
 
-## 10. How to append the output of a command to a file
+## 10. How to append the output of a command to a file?
 
 * **Definition:**
   * Append means to **add more to a file instead of overwriting its content**. We use **">>"** to append.
@@ -165,7 +195,7 @@ man ls | grep "^[[:space:]]*[[:punct:]]"
 
 ---
 
-## 11. How and when to redirect the output of a command to another (pipes)
+## 11. How and when to redirect the output of a command to another (pipes)?
 
  The pipe allows us to **redirect** the standard output of a command to the standard input of another. We need to redirect the output using piles in cases where we need to do additional action on the output of a commannd like filtering using grep, head, tail, etc.
 
@@ -187,38 +217,37 @@ man ls | grep "^[[:space:]]*[[:punct:]]"
 
 ## 12. How to use echo and output redirection to create a new file that contains some text?
 
-We can use echo and output redirection to create a file by using the  > or >> symbols. For example:
-
-```
- echo -e "Hello world" > hello_world.txt 
-```
+We can use echo and output redirection to create a file by using the **> symbols.**
+* **For example:**
+  * `echo -e "Hello world" > hello_world.txt `
+  * Here, **echo command** outputs a text and **'>' command** redirects and save the output to an existing file or creates a new one if it does not exist.
 
 ---
 
-## 13. How to use wildcards (For copying and moving multiple files at the same time)
+## 13. How to use wildcards (For copying and moving multiple files at the same time)?
 
 Using wildcards involves using one or more of the 3 wildcards:
 
-* `*` : matches zero to any number of characters
-* `?` : matches only 1 character
-* `[]` : matches 1 character from as given set
+* `*` : matches **zero to any number of characters**
+* `?` : matches **only 1** character
+* `[]` : matches **1 character** from **as given set**
 
-To use this for moving multiple files, follow the following examples:
+* **For example:**
 
-* Move all the files one directory to another
-  * `mv ~/Downloads/Nature/* ~/Pictures/wallpapers/`
-* Copy specific files based solely on their file extension
-  * `cp ~/Downloads/home/*.pdf ~/Documents/*.txt ~/Projects/school/`
-* Move specific files from one directory to another
-  * `mv Downloads/Movies/{*.png,*.gif} Downloads/Movies/MCU`
+  * Move all the files one directory to another
+    * `mv ~/Downloads/Nature/* ~/Pictures/wallpapers/`
+  * Copy specific files based solely on their file extension
+    * `cp ~/Downloads/home/*.pdf ~/Documents/*.txt ~/Projects/school/`
+  * Move specific files from one directory to another
+    * `mv Downloads/Movies/{*.png,*.gif} Downloads/Movies/MCU`
 
 ---
 
-## 14. How to use brace expansion (For creating entire directory structures in a single command)
+## 14. How to use brace expansion (For creating entire directory structures in a single command)?
 
-* Start with an open brace
+* Start with an open brace `{`
 * With no spaces, type your string separating entries by command
-* Close the brace
+* Close the brace `}`
 * **Examples:**
   * Create 3 different files with the same name but different file extensions
     * `touch file.{md,txt,rtf}`
@@ -233,40 +262,37 @@ To use this for moving multiple files, follow the following examples:
 
 ---
 
-## 15. How to create a simple “hello world” shell script  
+## 15. How to create a simple “hello world” shell script?
 
-* **Definition:**  
-  * A **shell script** is a text file containing commands for the shell to execute.  
-  * A simple “Hello World” script demonstrates script creation and execution basics.  
+* **Definition:**
+  * A **shell script** is a text file containing commands for the shell to execute.
+  * A simple “Hello World” script demonstrates script creation and execution basics.
 
-* **Steps / Usage:**  
-  1. Create a new file with `.sh` extension (e.g., `hello.sh`).  
-  2. Add the **shebang line** at the top: `#!/bin/bash`.  
-  3. Write the command: `echo "Hello World"`.  
-  4. Save the file and make it executable: `chmod +x hello.sh`.  
-  5. Run the script: `./hello.sh`.  
+* **Steps:**
+  1. Create a new file.
+     * Open a text editor and create a script file with `.sh` extension.
+     * **For example:**  `hello.sh`
+  2. Add shell declaration **shebang line** at the top: 
+     * **For example:**`#!/bin/bash`
+  3. Write the command: `echo + option + "string"`
+     * **For example:**`echo "Hello World"`
+  4. Run the script:
+     *  Open the terminal and use the command: `bash ~/path/to/script/hello.sh`  **(space after bash)**
+     * **For example:**`bash ~/Scripts/hello.sh`
 
-* **Example Script:**  
+<hr>
 
-  ```bash
-    #!/bin/bash
-    # Simple hello world script
-    echo "Hello World"
-  ```  
-
----
-
-## 16. How to use variables in a shell script  
+## 16. How to use variables in a shell script?  
 
 * **Definition:**  
   * Variables store values (strings, numbers, or command outputs) for reuse in a script.  
   * They make scripts flexible and dynamic.  
 
 * **Usage / Formula:**  
-  * Assign: `variable_name=value`  
-  * Access: `$variable_name`  
-  * Input: `read variable_name`  
-  * Command output: `variable=$(command)`  
+  * **Assign:** `variable_name=value`  **(No Space)**
+  * **Access:** `$variable_name`  
+  * **Input:** `read variable_name`  
+  * **Command output:** `variable=$(command)`  
 
 * **Examples:**  
   * Assign and print a variable  
@@ -301,9 +327,9 @@ To use this for moving multiple files, follow the following examples:
 
 ---
 
-## 17. For each of the following commands, include a definition, syntax/formula/usage/, and 2 - 5 well-documented examples
+## 17. For each of the following commands, include a definition, syntax/formula/usage/, and 2 - 5 well-documented examples.
 
-### a. awk
+### a. AWK
 
 * **Definition:**
 
@@ -364,9 +390,11 @@ To use this for moving multiple files, follow the following examples:
   * Print **specific fields with a head** of the /etc/passwd file
     * `awk -F: 'BEGIN { printf "%s\t\t%s\n","User", "Shell" } {print $1,"\t",$7}' /etc/passwd`
 
-    ---
+![](awk.png)
 
-  ### b. cat
+<hr>
+
+  ### b. CAT
 
   * **Definition:**
     * The **cat command** is used for displaying the content of a file.
@@ -380,9 +408,9 @@ To use this for moving multiple files, follow the following examples:
       * `cat -n ~/Documents/sample_files/Code/helloWorld.py`
     * Display the content of a file including **non printing characters and line endings**
       * `cat -A ~/Documents/sample_files/Code/helloWorld.py`
-    ---
+<hr>
 
-  ### c. cp
+  ### c. CP
 
   * **Usage:**
     * **cp** is used to copy files/directories from a source to a destination
@@ -410,9 +438,10 @@ To use this for moving multiple files, follow the following examples:
       * `sudo cp -r script.sh program.py home.html assets/ /var/www/html/`
     * To copy a directory with verbose output
       * `cp -rv ~/projectOrion/ ~/Documents/`
-    ---
 
-  ### d. cut
+<hr>
+
+  ### d. CUT
 
   * **Definition:**
     * The **cut command** is used to extract a specific section of each line of a file and display it to the screen.
@@ -432,70 +461,76 @@ To use this for moving multiple files, follow the following examples:
       * `cut -d ':' --complement -s -f6 /etc/passwd`
     * Cut the **permissions from the output** of ls
       * `ls -l | cut -d ' ' --complement -s -f1`
-    ---
 
-  ### e. grep
+![](cut.png)
+
+<hr>
+
+  ### e. GREP
 
   * **Definition:**
   * Grep is used to **search text in given file**. Grep works or search in a line by line basis.
-* **Usage:**
-  * `grep + option + search criteria + file(s)`
-* **Common Options:**
-  * `-i`: Enables case insensitivity (matches regardless of case).
-  * `-n`: Displays line number for every line matched.
-  * `-E`: Treats the pattern as an extended regular expression.
-  * `-G`: Treats the pattern as a basic regular expression.
-  * `-v`: Inverts the search (finds lines that do not match the pattern).
-  * `-o`: Only displays the matched string.
-  * `-c`: Displays the total number of times a pattern is matched.
-  * `-w`: Matches only the whole word (exact pattern).
-  * `-r` or `-R`: Searches recursively through directories.
-* **Examples:**
-  * **Search** any line that contains the word **"dracula" in the given file**.
-    * `grep 'dracula' ~/Documents/sample_files/Txt/dracula.txt`
-  * Search any line that contains the word "dracula" **regardless of the case**.
-    * `grep -i 'dracula' ~/Documents/sample_files/Txt/dracula.txt`
-  * Display how many **lines** contain the **matched string**.
-    * `grep -c 'Dracula' ~/Documents/sample_files/Txt/dracula.txt`
-  * Search any line that contains the word "dracula" **regardless of case and with number line**
-    * `grep -in 'dracula' ~/Documents/sample_files/Txt/dracula.txt`
-  * Search for all the lines that **do not contain the word 'war'**
-    * `grep -v 'war' ~/Documents/sample_files/Txt/war-and-peace.txt`
-  * Search and display **only the matched string** (pattern)
-    * `grep -o 'pride' ~/Documents/sample_files/Txt/war-and-peace.txt`
-  * Display a **list of users** with the **/bin/bash login shell**
-    * `grep -i "/bin/bash" /etc/passwd`
-  * Display your **user's information** as stored in the **/etc/passwd**
-    * `grep -i $USER /etc/passwd`
-  * Search for a **given strings** inside files in a given directory
-    * `grep -iR 'conf' /etc/`
-  * Search and display the **total number of times a given word appears** in a file
-    * `grep -wc '/bin/bash' /etc/passwd`
-  * The **^ (caret) symbol** matches the empty string at the beginning of a line. Search for all the **lines that start with a given word**
-    * `grep -ni '^dracula' ~/Documents/sample_files/Txt/dracula.txt`
-  * Search for all the **lines** that ends with the **string "nologin"**
-    * `grep -n 'nologin$' /etc/passwd`
-  * Search for all the **lines** that **start with a capital letter**
-    * `grep -n '^[A-Z]' ~/Documents/sample_files/Txt/dracula.txt`
-  * Search for **more than one word per line**
-    * `grep -Ewn 'horror|love|scare' ~/Documents/sample_files/Txt/dracula.txt`
-  * Match only lines containing **IPv4 addresses**
-    * `grep -E '[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}' ~/Documents/sample_files/Txt/practice.txt`
-  * Search all lines that contain a **character repeated 3 times**
-    * `grep -E "A{3}" file.txt`
-  * Search all lines that contain a **phone number** of the **format 973-111-2222**
-    * `grep "[[:digit:]]\{3\}[-][[:digit:]]\{3\}[-][[:digit:]]\{4\}" ~/Documents/sample_files/Csv/contacts.csv`
-  * Display only the options of any **command from its man page**
-    * `man ls | grep "^[[:space:]]*[[:punct:]]"`
-  * Search for all the **lines** that contain a **single word "linux"** in all the **files in the system**
-    * `grep -niR '^linux$' /`
-  * The **period (.) symbol** is a meta-character that **matches any single character**. It searches for all lines that contain a word starting with the letter "d" followed by any 4 characters
-    * `grep -n '^d....' ~/Documents/sample_files/Txt/dracula.txt`
-  * **Bracket expressions** allows match a **group of characters** by enclosing them in bracket []. It matches all lines that contain the words **"list", "last", or "lost"**
-    * `grep -n 'l[aio]st' ~/Documents/sample_files/Txt/dracula.txt`
-    ---
+  * **Usage:**
+    * `grep + option + search criteria + file(s)`
+  * **Common Options:**
+    * `-i`: Enables case insensitivity (matches regardless of case).
+    * `-n`: Displays line number for every line matched.
+    * `-E`: Treats the pattern as an extended regular expression.
+    * `-G`: Treats the pattern as a basic regular expression.
+    * `-v`: Inverts the search (finds lines that do not match the pattern).
+    * `-o`: Only displays the matched string.
+    * `-c`: Displays the total number of times a pattern is matched.
+    * `-w`: Matches only the whole word (exact pattern).
+    * `-r` or `-R`: Searches recursively through directories.
+  * **Examples:**
+    * **Search** any line that contains the word **"dracula" in the given file**.
+      * `grep 'dracula' ~/Documents/sample_files/Txt/dracula.txt`
+    * Search any line that contains the word "dracula" **regardless of the case**.
+      * `grep -i 'dracula' ~/Documents/sample_files/Txt/dracula.txt`
+    * Display how many **lines** contain the **matched string**.
+      * `grep -c 'Dracula' ~/Documents/sample_files/Txt/dracula.txt`
+    * Search any line that contains the word "dracula" **regardless of case and with number line**
+      * `grep -in 'dracula' ~/Documents/sample_files/Txt/dracula.txt`
+    * Search for all the lines that **do not contain the word 'war'**
+      * `grep -v 'war' ~/Documents/sample_files/Txt/war-and-peace.txt`
+    * Search and display **only the matched string** (pattern)
+      * `grep -o 'pride' ~/Documents/sample_files/Txt/war-and-peace.txt`
+    * Display a **list of users** with the **/bin/bash login shell**
+      * `grep -i "/bin/bash" /etc/passwd`
+    * Display your **user's information** as stored in the **/etc/passwd**
+      * `grep -i $USER /etc/passwd`
+    * Search for a **given strings** inside files in a given directory
+      * `grep -iR 'conf' /etc/`
+    * Search and display the **total number of times a given word appears** in a file
+      * `grep -wc '/bin/bash' /etc/passwd`
+    * The **^ (caret) symbol** matches the empty string at the beginning of a line. Search for all the **lines that start with a given word**
+      * `grep -ni '^dracula' ~/Documents/sample_files/Txt/dracula.txt`
+    * Search for all the **lines** that ends with the **string "nologin"**
+      * `grep -n 'nologin$' /etc/passwd`
+    * Search for all the **lines** that **start with a capital letter**
+      * `grep -n '^[A-Z]' ~/Documents/sample_files/Txt/dracula.txt`
+    * Search for **more than one word per line**
+      * `grep -Ewn 'horror|love|scare' ~/Documents/sample_files/Txt/dracula.txt`
+    * Match only lines containing **IPv4 addresses**
+      * `grep -E '[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}' ~/Documents/sample_files/Txt/practice.txt`
+    * Search all lines that contain a **character repeated 3 times**
+      * `grep -E "A{3}" file.txt`
+    * Search all lines that contain a **phone number** of the **format 973-111-2222**
+      * `grep "[[:digit:]]\{3\}[-][[:digit:]]\{3\}[-][[:digit:]]\{4\}" ~/Documents/sample_files/Csv/contacts.csv`
+    * Display only the options of any **command from its man page**
+      * `man ls | grep "^[[:space:]]*[[:punct:]]"`
+    * Search for all the **lines** that contain a **single word "linux"** in all the **files in the system**
+      * `grep -niR '^linux$' /`
+    * The **period (.) symbol** is a meta-character that **matches any single character**. It searches for all lines that contain a word starting with the letter "d" followed by any 4 characters
+      * `grep -n '^d....' ~/Documents/sample_files/Txt/dracula.txt`
+    * **Bracket expressions** allows match a **group of characters** by enclosing them in bracket []. It matches all lines that contain the words **"list", "last", or "lost"**
+      * `grep -n 'l[aio]st' ~/Documents/sample_files/Txt/dracula.txt`
 
-  ### f. head
+![](grep.png)
+
+<hr>
+
+  ### f. HEAD
 
   * **Definition:**
     * The **head command** displays the top N number of lines of a given file.
@@ -517,9 +552,10 @@ To use this for moving multiple files, follow the following examples:
       * `head -v -n 7 Json/joke.json`
     * Display a **given number of bytes** instead of lines
       * `head -c 50 Txt/dracula.txt`
-    ---
 
-  ### g. ls
+<hr>
+
+  ### g. LS
 
   * **Usage:**
     * `ls` is used for listing files and directories.
@@ -548,7 +584,7 @@ To use this for moving multiple files, follow the following examples:
       * `ls -lhgGr Documents/`
   ---
 
-  ### h. man
+  ### h. MAN
 
   * **Definition**:
 
@@ -567,7 +603,7 @@ To use this for moving multiple files, follow the following examples:
       * `man -f passwd`
   ---
 
-  ### i. mkdir
+  ### i. MKDIR
 
   * **Usage:**
   * **mkdir** is used for creating a single directory or multiple directories (folders) **by separating each directory name with a space**.
@@ -597,10 +633,9 @@ To use this for moving multiple files, follow the following examples:
       * `mkdir -p wallpapers_others/movies`
     * Create a directory and display a message confirming the directory creation (**verbose output**)
       * `mkdir -pv wallpapers_others/movies`
-
-    ---
+<hr>
   
-  ### j. mv
+  ### j. MV
 
   * **Usage:**
     * **mv** is used to move and rename files and directories.
@@ -634,9 +669,10 @@ To use this for moving multiple files, follow the following examples:
 
     * To **move and rename** a file in the same command
       * `mv Downloads/cis106homework.docx Documents/new_cis106homework.docx`
-    ---
 
-  ### k. tac
+<hr>
+
+  ### k. TAC
 
   * **Definition:**
   * The **tac command** is used for displaying the content of a file in **reverse order**.
@@ -648,10 +684,9 @@ To use this for moving multiple files, follow the following examples:
       * `tac ~/Documents/sample_files/Code/helloWorld.py`
     * Display the content of **multiple files** in reverse order
       * `tac ~/Documents/sample_files/Code/helloWorld.py ~/Documents/sample_files/Code/helloWorld.sh`
+<hr>
 
-    ---
-
-  ### l. tail
+  ### l. TAIL
 
   * **Definition:**
     * The **tail command** displays the last N number of lines of a given file.
@@ -673,9 +708,12 @@ To use this for moving multiple files, follow the following examples:
       * `tail -v -n 7 Json/joke.json`
     * Display a **given number of bytes** instead of lines
       * `tail -c 50 Txt/dracula.txt`
-      ---
 
-  ### m. touch
+![](tail.png)
+
+<hr>
+
+  ### m. TOUCH
 
   * **Usage:**
     * **touch** is used for creating files an empty file or to update the timestamp of an existing file..
@@ -699,54 +737,61 @@ To use this for moving multiple files, follow the following examples:
     * Create a file with a space in its name
       * `touch "list of foods.txt"`
 
----
+<hr>
 
-### n. tr  
+### n. TR 
 
 * **Definition:**  
-  * The **tr command** (short for *translate*) is used to **translate, squeeze, or delete characters** from standard input and write the result to standard output.  
-  * It works only on **stdin → stdout**, meaning it doesn’t take files directly as arguments (you pipe or redirect input into it).  
+  * The **tr command** is used to **translate, squeeze, or delete characters** from standard input and write the result to standard output.  
+  * It works only on **stdin → stdout**, meaning it does not take files directly as arguments (we pipe or redirect input into it).  
 
 * **Usage:**  
-  * `tr [options] set1 [set2]`  
+  * `Standard output | tr + option + set1 + set2`  
 
-* **Examples:**  
+* **Examples:**
+  * Translate one character to another (For example: a period with comma)
+    * `cat practice.txt | tr '.' ','`
+  * Translate space into tabs.
+    * `cat practice.txt | tr "[:space:]" '\t'`
+  * Translate tabs into space.
+    * `cat practice | tr -s "[:space:]" ' '` (-s squeeze repeated character- 1 tab = 5 spaces) **OR**
+    * `cat practice.txt | tr '\t' ' '`
   * Convert all lowercase letters to uppercase  
-    * `cat file.txt | tr 'a-z' 'A-Z'`  
+    * `cat practice.txt | tr 'a-z' 'A-Z'`  
   * Delete all digits from a file  
-    * `cat file.txt | tr -d '0-9'`  
+    * `cat practice.txt | tr -d '0-9'`  
   * Replace spaces with newlines  
     * `echo "one two three" | tr ' ' '\n'`  
   * Squeeze multiple spaces into a single space  
     * `echo "hello     world" | tr -s ' '`  
   * Remove all newline characters (make text continuous)  
-    * `cat file.txt | tr -d '\n'`  
+    * `cat practice.txt | tr -d '\n'` 
 
-  ---
+![](tr.png)
 
-### o. tree  
+<hr>
+
+### o. TREE 
 
 * **Definition:**  
   * The **tree command** displays the **directory structure of a path or the current directory** in a **tree-like format**.  
   * It recursively lists subdirectories and files in a hierarchical view.  
 
 * **Usage:**  
-  * `tree [options] [directory]`  
+  * `tree + option + directory`  
 
 * **Examples:**  
-  * Display the tree structure of the current directory  
+  * Display the tree structure of the **current directory**  
     * `tree`  
-  * Display the tree structure of a specific directory  
+  * Display the tree structure of a **specific directory**  
     * `tree ~/Documents/sample_files`  
   * Limit the depth of the tree to 2 levels  
     * `tree -L 2`  
-  * Show hidden files in the tree  
+  * Show **hidden files** in the tree  
     * `tree -a`  
-  * Display the size of each file in the tree  
+  * Display the **size** of each file in the tree  
     * `tree -s`  
-  * Print the tree with full path prefix for each file  
+  * Print the tree with full **path** prefix for each file  
     * `tree -f`  
   * Export the tree output into a file  
     * `tree ~/Projects > project_structure.txt`  
-
-  ---
